@@ -4,6 +4,8 @@
 
 Developed a predictive model to accurately forecast job titles and salaries based on user input, leveraging machine learning algorithms and data preprocessing techniques. The project involved applying Python programming skills for data manipulation, feature engineering, and model training. Additionally, the model was deployed using web development technologies, enhancing its accessibility to users. This project was conducted within the AI4ALL Apply AI program, providing a structured framework and mentorship to explore real-world applications of artificial intelligence.
 
+Heroku App Project Link: https://datasciencejobprediction-d5b99491b1ae.herokuapp.com/
+
 ## Problem Statement <!--- do not change this line -->
 The current job market is characterized by a high degree of complexity, with job seekers often facing challenges in accurately predicting their potential job titles and expected salaries based on their qualifications and experience. Existing job search platforms may not always provide reliable or personalized recommendations, leading to frustration and inefficiency in the job search process. To address this issue, there is a need for a robust predictive model that can accurately predict job titles and salaries based on user input, providing job seekers with personalized recommendations to streamline their job search process.
 
