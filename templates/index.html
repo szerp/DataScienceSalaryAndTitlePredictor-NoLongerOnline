@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI4ALL Project</title>
+  <!-- Other head elements like links to external stylesheets or scripts -->
+  
+  <!-- Styles Start Here -->
+  <style>
+    body {
+      font-family: 'Gloria Hallelujah', cursive;
+      background-image: url('https://ideogram.ai/api/images/direct/QQcNxehiTtGXzzpKn9y69w.png'); /* Replace 'background-image.jpg' with the path to your image */
+      background-size: cover;
+      background-position: center;
+      color: #444;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8); /* Adding a semi-transparent background to improve readability */
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .form-columns {
+      display: flex;
+      gap: 20px;
+      justify-content: center; /* Center the columns horizontally */
+    }
+    .form-column {
+      flex: 1;
+      text-align: left;
+    }
+    .form-header {
+      font-size: 2rem; /* Increased font size for header */
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #c71585; /* Sailor Moon Pink */
+    }
+    .form-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .form-row select {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid #c71585; /* Sailor Moon Pink border */
+      background-color: #f8bbd0; /* Light pink background */
+      color: #333; /* Darker text color */
+    }
+    .location-container {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .location-label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .location-select {
+      margin: 0 auto;
+      display: block;
+    }
+    .get-recommendations-btn {
+      font-size: 1.5rem;
+      padding: 12px 20px;
+      border-radius: 25px;
+      background-color: #c71585; /* Sailor Moon Pink */
+      color: #fff; /* White text color */
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .get-recommendations-btn:hover {
+      background-color: #ff69b4; /* Lighter pink on hover */
+    }
+    .recommended-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #c71585; /* Sailor Moon Pink */
+    }
+  </style>
+  <!-- Styles End Here -->
+</head>
+<body>
+  <div class="container">
+    <h1 class="form-header">Enter your information! &#x1F63A </h1>
+    <p>We'll provide personalized job title and salary recommendations based on your input.</p>
+  
+    <div class="disclaimer">
+      <p><strong>Disclaimer:</strong> The recommendations provided by this application are based on available data and algorithms, and may not always accurately reflect real-world scenarios. Especially for individuals with more years of experience, the accuracy of the recommendations may vary. It is important to note that these recommendations should be used as a guide and not as definitive advice. Users are encouraged to exercise caution and seek additional professional advice when making important decisions based on the recommendations provided by this application.</p>
+    </div>
+   
+    <form id="input-form" action="/predict" method="post">
+      <!-- Location -->
+      <div class="form-row">
+        <label for="location">Location</label>
+        <select id="location" name="location">
+          <option value="">Choose...</option>
+          {% set locations = ['CA', 'Remote', 'NY', 'NJ', 'VA', 'FL', 'MN', 'MD', 'DC', 'WA', 'MA', 'NM', 'AR', 'IA', 'IL', 'MI', 'CO', 'TX', 'GA', 'CT', 'AL', 'WI'] %}
+          {% for location in locations|sort %}
+          <option value="{{ location }}">{{ location }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      
+      <!-- Skills -->
+      <h2 class="form-header">Skills</h2>
+      {% set sorted_skills = skills|sort %}
+      {% for i in range(1, 6) %}
+      <div class="form-row">
+        <label for="skill_{{ i }}">Skill {{ i }}</label>
+        <select id="skill_{{ i }}" name="skill_{{ i }}">
+          <option value="">Choose...</option>
+          {% for skill in sorted_skills %}
+          <option value="{{ skill }}">{{ skill }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      {% endfor %}
+      
+      <!-- Years of Experience -->
+      <div class="form-row">
+        <label for="years_of_experience">Years of Experience</label>
+        <select id="years_of_experience" name="years_of_experience">
+          {% for year in range(1, 51) %}
+          <option value="{{ year }}">{{ year }}</option>
+          {% endfor %}
+        </select>
+      </div>    
+
+      <!-- Submit button -->
+      <button type="submit" id="get-recommendations-btn" class="get-recommendations-btn">Get recommendations</button>
+    </form>
+
+    <!-- Recommendations section -->
+    <h2 class="form-header">Your personalized recommendations</h2>
+    <p class="recommended-text">Based on your inputs, here are recommendations for you:</p>
+
+    <div class="predicted-title-container"></div>
+    <div class="predicted-salary-container"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('input-form');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        const formData = new FormData(form);
+    
+        fetch('/predict', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Display the predictions
+          document.querySelector('.predicted-title-container').innerHTML = `<p class="recommended-text">Predicted Title: ${data.predicted_title}</p>`;
+          // Format the predicted salary
+          const formattedSalary = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 }).format(data.predicted_salary);
+          document.querySelector('.predicted-salary-container').innerHTML = `<p class="recommended-text">Predicted Salary: ${formattedSalary}</p>`;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
