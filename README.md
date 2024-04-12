@@ -10,11 +10,11 @@ Heroku App Project Link: https://datasciencejobprediction-d5b99491b1ae.herokuapp
 The current job market is characterized by a high degree of complexity, with job seekers often facing challenges in accurately predicting their potential job titles and expected salaries based on their qualifications and experience. Existing job search platforms may not always provide reliable or personalized recommendations, leading to frustration and inefficiency in the job search process. To address this issue, there is a need for a robust predictive model that can accurately predict job titles and salaries based on user input, providing job seekers with personalized recommendations to streamline their job search process.
 
 ## Key Results <!--- do not change this line -->
-Accurate Predictions: The predictive model developed in this project consistently provided accurate predictions of job titles and salaries based on user input. However, currently, I am unable to verify the accuracy of the models statistically due to some errors encountered in the terminal. I am actively working with my mentor and instructors to address these issues.
-User-Friendly Interface: The web application interface was designed to be intuitive and user-friendly, allowing users to easily input their information and receive personalized recommendations without encountering any usability issues.
-Dynamic Form Elements: Implementation of dynamic form elements using JavaScript enhanced the interactivity of the web application, providing a smooth and responsive user experience.
-Robust Deployment: The web application was successfully deployed on Heroku, ensuring reliable access for users over the internet. The deployment process was smooth and without any major issues, ensuring the application's availability.
-Professional Disclaimer: A professional disclaimer was incorporated into the application, highlighting the potential limitations of the predictions, especially with higher years of experience, to manage user expectations effectively.
+- Accurate Predictions: The predictive model developed in this project consistently provided accurate predictions of job titles and salaries based on user input. However, currently, I am unable to verify the accuracy of the models statistically due to some errors encountered in the terminal. I am actively working with my mentor and instructors to address these issues.
+- User-Friendly Interface: The web application interface was designed to be intuitive and user-friendly, allowing users to easily input their information and receive personalized recommendations without encountering any usability issues.
+- Dynamic Form Elements: Implementation of dynamic form elements using JavaScript enhanced the interactivity of the web application, providing a smooth and responsive user experience.
+- Robust Deployment: The web application was successfully deployed on Heroku, ensuring reliable access for users over the internet. The deployment process was smooth and without any major issues, ensuring the application's availability.
+- Professional Disclaimer: A professional disclaimer was incorporated into the application, highlighting the potential limitations of the predictions, especially with higher years of experience, to manage user expectations effectively.
 
 
 ## Methodologies <!--- do not change this line -->
