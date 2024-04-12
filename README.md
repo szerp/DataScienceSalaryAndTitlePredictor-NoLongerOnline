@@ -43,14 +43,14 @@ Kaggle Dataset: https://www.kaggle.com/datasets/abhaykumar2812/ai-and-ml-jobs
 
 ## Technologies Used <!--- do not change this line -->
 Here are the technologies, libraries, and frameworks used in the project:
-    Python
-    Flask
-    scikit-learn
-    NumPy
-    pandas
-    Gunicorn (for deployment)
-    HTML
-    CSS
+- Python
+- Flask
+- scikit-learn
+- NumPy
+- pandas
+- Gunicorn (for deployment)
+- HTML
+- CSS
 
 ## Authors <!--- do not change this line -->
 Sarahit Zerpa szerpa@wgu.edu
