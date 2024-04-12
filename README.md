@@ -81,7 +81,7 @@ https://www.canva.com/design/DAGBJB044mk/0ARSOpuKIO3S0OuN_UHCpA/view?utm_content
 ![21](https://github.com/szerp/DataScienceSalaryAndTitlePredictor/assets/68039475/b1c0b992-e082-4bb9-8adc-11a3f1a21dc0)
 ![22](https://github.com/szerp/DataScienceSalaryAndTitlePredictor/assets/68039475/fdf3cef1-73f5-4ef6-8058-b57cf144f82b)
 ![23](https://github.com/szerp/DataScienceSalaryAndTitlePredictor/assets/68039475/1970977a-faf6-450d-b30e-c2081d6ef305)
-![24](https://github.com/szerp/DataScienceSalaryAndTitlePredictor/assets/68039475/f89b9b5f-dd9e-4516-a2ea-83875a92dc22)
+![DATA SCIENCE SALARIES PROJECT](https://github.com/szerp/DataScienceSalaryAndTitlePredictor/assets/68039475/7551b8c0-6fe1-47e5-b8fc-7c9a11918e37)
 ![25](https://github.com/szerp/DataScienceSalaryAndTitlePredictor/assets/68039475/1be1a4fe-f638-44c0-a3b3-b0177780bc50)
 ![26](https://github.com/szerp/DataScienceSalaryAndTitlePredictor/assets/68039475/b4a88581-8c90-4985-a52c-2ea405c41f3c)
 
